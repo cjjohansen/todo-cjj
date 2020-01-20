@@ -4,14 +4,24 @@
      <v-container my-5>
    
          <v-layout row justify-start class="mb-3">
-        <v-btn small text color="grey" @click="sortBy('title')">
-          <v-icon small left>folder</v-icon>
-          <span class="caption text-lowercase">By project name</span>
-        </v-btn>
-        <v-btn small text color="grey" @click="sortBy('person')">
-          <v-icon small left>person</v-icon>
-          <span class="caption text-lowercase">By Person</span>
-        </v-btn>
+         <v-tooltip top>
+           <template v-slot:activator="{ on }">
+          <v-btn small text color="grey" @click="sortBy('title')" v-on="on">
+            <v-icon small left>folder</v-icon>
+            <span class="caption text-lowercase">By project name</span>
+          </v-btn>
+           </template>
+          <span>Sort by project name</span>
+        </v-tooltip>
+        <v-tooltip top>
+          <template v-slot:activator="{ on }">
+          <v-btn small text color="grey" @click="sortBy('person')" v-on="on">
+            <v-icon small left>person</v-icon>
+            <span class="caption text-lowercase">By Person</span>
+          </v-btn>
+           </template>
+          <span>Sort by project author</span>
+        </v-tooltip>
       </v-layout>
 
    

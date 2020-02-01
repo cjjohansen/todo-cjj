@@ -8,33 +8,6 @@
             </v-toolbar-title>
                 <v-spacer></v-spacer>
 
-
-<!--
- <v-menu top :offset-y="offset">
-      <template v-slot:activator="{ on }">
-        <v-btn
-          color="primary"
-          dark
-          v-on="on"
-        >
-          Dropdown
-        </v-btn>
-      </template>
-
-      <v-list>
-        <v-list-item
-          v-for="(item, index) in items"
-          :key="index"
-          @click=""
-        >
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-menu>
-
-
-
--->
  <v-menu offset-y >
       <template v-slot:activator="{ on }">
         <v-btn
@@ -74,10 +47,13 @@
           </v-avatar>
           <p class="white--text subheading mt-1">The Net Ninja</p>
         </v-flex>
+        <v-flex class="mt-4 mb-3">
+                        <Popup/>
+        </v-flex>
       </v-layout>
  
 
-                     <v-list>
+       <v-list>
         <v-list-item v-for="link in links" :key="link.text" router :to="link.route">
           <v-list-item-action>
             <v-icon class="white--text">{{ link.icon }}</v-icon>
@@ -93,7 +69,10 @@
 
 
 <script>
+import Popup from './Popup'
+
 export default {
+    components:{Popup},
     data(){
         return {
             drawer:false,
